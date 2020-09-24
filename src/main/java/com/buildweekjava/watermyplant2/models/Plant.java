@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "plants")
 public class Plant{
 
     @Id
@@ -13,6 +15,7 @@ public class Plant{
     @ManyToOne
     @JoinColumn(name = "userid", nullable = false)
     @JsonIgnoreProperties(value = "roles", allowSetters = true)
+
     private User user;
 
     private String nickname;

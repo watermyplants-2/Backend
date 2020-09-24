@@ -1,13 +1,10 @@
 package com.buildweekjava.watermyplant2;
 
+import com.buildweekjava.watermyplant2.models.*;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 
-import com.buildweekjava.watermyplant2.models.Role;
-import com.buildweekjava.watermyplant2.models.User;
-import com.buildweekjava.watermyplant2.models.UserRoles;
-import com.buildweekjava.watermyplant2.models.Useremail;
 import com.buildweekjava.watermyplant2.services.RoleService;
 import com.buildweekjava.watermyplant2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +78,11 @@ public class SeedData
                 .add(new Useremail(u1,
                                    "admin@mymail.local"));
 
+//
         userService.save(u1);
+        u1.getPlants().add(new Plant(u1, "Forget Me Not", "Myosotis Sylvatica",
+                "4 Times a Week in Summer, and Once a week the rest of the year" ));
+        u1.getPlants().add(new Plant(u1, "Mexican Sage", "Salvia Leucantha","Water Mexican sage only during periods of drought, when more than two weeks have passed without significant rainfall" ));
 
         // data, user
         User u2 = new User("cinnamon",
