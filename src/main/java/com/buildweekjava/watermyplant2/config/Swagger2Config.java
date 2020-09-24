@@ -45,13 +45,13 @@ public class Swagger2Config
      */
     private ApiInfo apiEndPointsInfo()
     {
-        return new ApiInfoBuilder().title("User Model Example")
-                .description("User Model Example")
+        return new ApiInfoBuilder().title("Water My Plants")
+                .description("Water My Plants back end")
                 .contact(new Contact("Matias Iturbide",
                                      "http://www.fakesite.com",
                                      "Matiasiturbide@gmail.com"))
                 .license("MIT")
-                .licenseUrl("https://github.com/BW-Med-Cabinet-2/back-end/blob/master/LICENSE")
+                .licenseUrl("https://github.com/watermyplants-2/Backend/blob/master/LICENSE")
                 .version("1.0.0")
                 .build();
     }
