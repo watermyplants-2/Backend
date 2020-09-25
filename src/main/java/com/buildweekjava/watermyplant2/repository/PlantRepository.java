@@ -13,7 +13,7 @@ public interface PlantRepository extends CrudRepository<Plant, Long> {
     @Query(value = "UPDATE plant SET nickname = :nickname," + "last_modified_by = :uname, " +
             "last_modified_date = current_timestamp WHERE plantid = :plantid", nativeQuery = true)
 
-            void updatePlantName(
+            void updatePlant(
             String uname,
             long plantid,
             String nickname);

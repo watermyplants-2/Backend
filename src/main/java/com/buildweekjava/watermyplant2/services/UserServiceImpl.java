@@ -10,23 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Implements UserService Interface
- */
+
 @Transactional
 @Service(value = "userService")
 public class UserServiceImpl
     implements UserService
 {
-    /**
-     * Connects this service to the User table.
-     */
+
     @Autowired
     private UserRepository userrepos;
 
-    /**
-     * Connects this service to the Role table
-     */
     @Autowired
     private RoleService roleService;
 
@@ -50,10 +43,7 @@ public class UserServiceImpl
     public List<User> findAll()
     {
         List<User> list = new ArrayList<>();
-        /*
-         * findAll returns an iterator set.
-         * iterate over the iterator set and add each element to an array list.
-         */
+
         userrepos.findAll()
             .iterator()
             .forEachRemaining(list::add);
@@ -192,8 +182,6 @@ public class UserServiceImpl
             return userrepos.save(currentUser);
         } else
         {
-            // note we should never get to this line but is needed for the compiler
-            // to recognize that this exception can be thrown
             throw new ResourceNotFoundException("This user is not authorized to make change");
         }
     }

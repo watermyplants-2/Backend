@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "plants")
+@JsonIgnoreProperties(value = "user")
 public class Plant{
 
     @Id
@@ -18,7 +19,7 @@ public class Plant{
 
     @ManyToOne
     @JoinColumn(name = "userid", nullable = false)
-    @JsonIgnoreProperties(value = "users", allowSetters = true)
+//    @JsonIgnoreProperties(value = "user", allowSetters = true)
 
     private User user;
 
