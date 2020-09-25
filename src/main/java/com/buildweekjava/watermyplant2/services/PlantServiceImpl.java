@@ -12,13 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
-@Service(value = "PlantService")
+@Service(value = "plantService")
 public class PlantServiceImpl implements PlantService {
     @Autowired
     PlantRepository plantRepository;
     @Autowired
     UserRepository userRepository;
-
     @Autowired
     UserService userService;
 
@@ -26,7 +25,7 @@ public class PlantServiceImpl implements PlantService {
     @Override
     public List<Plant> findAll(){
         List<Plant> list = new ArrayList<>();
-//        PlantRepository.findAll().iterator().forEachRemaining(list::add);
+        plantRepository.findAll().iterator().forEachRemaining(list::add);
         return list;
     }
     public Plant update(Plant plant, long plantid) {

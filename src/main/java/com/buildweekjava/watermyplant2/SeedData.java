@@ -14,38 +14,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Locale;
 
-/**
- * SeedData puts both known and random data into the database. It implements CommandLineRunner.
- * <p>
- * CoomandLineRunner: Spring Boot automatically runs the run method once and only once
- * after the application context has been loaded.
- */
 @Transactional
 @Component
 public class SeedData
         implements CommandLineRunner
 {
-    /**
-     * Connects the Role Service to this process
-     */
+
     @Autowired
     RoleService roleService;
 
-    /**
-     * Connects the user service to this process
-     */
     @Autowired
     UserService userService;
 
-    /**
-     * Generates test, seed data for our application
-     * First a set of known data is seeded into our database.
-     * Second a random set of data using Java Faker is seeded into our database.
-     * Note this process does not remove data from the database. So if data exists in the database
-     * prior to running this process, that data remains in the database.
-     *
-     * @param args The parameter is required by the parent interface but is not used in this process.
-     */
+
     @Transactional
     @Override
     public void run(String[] args) throws
@@ -102,6 +83,11 @@ public class SeedData
                 .add(new Useremail(u2,
                                    "bunny@email.local"));
         userService.save(u2);
+        u2.getPlants().add(new Plant(u2, "Forget Me Not", "Myosotis Sylvatica",
+                "4 Times a Week in Summer, and Once a week the rest of the year" ));
+        u2.getPlants().add(new Plant(u2, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
+                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
 
         // user
         User u3 = new User("barnbarn",
@@ -113,6 +99,11 @@ public class SeedData
                 .add(new Useremail(u3,
                                    "barnbarn@email.local"));
         userService.save(u3);
+        u3.getPlants().add(new Plant(u3, "Forget Me Not", "Myosotis Sylvatica",
+                "4 Times a Week in Summer, and Once a week the rest of the year" ));
+        u3.getPlants().add(new Plant(u3, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
+                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
 
         User u4 = new User("puttat",
                            "password",
@@ -120,6 +111,11 @@ public class SeedData
         u4.getRoles()
                 .add(new UserRoles(u4, r2));
         userService.save(u4);
+        u4.getPlants().add(new Plant(u4, "Forget Me Not", "Myosotis Sylvatica",
+                "4 Times a Week in Summer, and Once a week the rest of the year" ));
+        u4.getPlants().add(new Plant(u4, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
+                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
 
         User u5 = new User("misskitty",
                            "password",
@@ -127,6 +123,11 @@ public class SeedData
         u5.getRoles()
                 .add(new UserRoles(u5, r2));
         userService.save(u5);
+        u5.getPlants().add(new Plant(u5, "Forget Me Not", "Myosotis Sylvatica",
+                "4 Times a Week in Summer, and Once a week the rest of the year" ));
+        u5.getPlants().add(new Plant(u5, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
+                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
 
         if (false)
         {
