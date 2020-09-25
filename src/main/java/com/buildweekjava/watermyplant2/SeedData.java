@@ -66,7 +66,9 @@ public class SeedData
         u1.getPlants().add(new Plant(u1, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u1.getPlants().add(new Plant(u1, "Mexican Sage", "Salvia Leucantha","Water Mexican sage only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
         userService.save(u1);
+
         // data, user
         User u2 = new User("cinnamon",
                            "1234567",
@@ -87,8 +89,8 @@ public class SeedData
 
         u2.getPlants().add(new Plant(u2, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
-        u2.getPlants().add(new Plant(u2, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
-                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+        u2.getPlants().add(new Plant(u2, "Mexican Sage", "Salvia Leucantha","only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
         userService.save(u2);
 
         // user
@@ -103,8 +105,7 @@ public class SeedData
 
         u3.getPlants().add(new Plant(u3, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
-        u3.getPlants().add(new Plant(u3, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
-                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+        u3.getPlants().add(new Plant(u3, "Mexican Sage", "Salvia Leucantha","only during periods of drought, when more than two weeks have passed without significant rainfall" ));
         userService.save(u3);
 
         User u4 = new User("puttat",
@@ -114,8 +115,8 @@ public class SeedData
                 .add(new UserRoles(u4, r2));
         u4.getPlants().add(new Plant(u4, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
-        u4.getPlants().add(new Plant(u4, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
-                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+        u4.getPlants().add(new Plant(u4, "Mexican Sage", "Salvia Leucantha","only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
         userService.save(u4);
 
 
@@ -127,8 +128,8 @@ public class SeedData
 
         u5.getPlants().add(new Plant(u5, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
-        u5.getPlants().add(new Plant(u5, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
-                "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+        u5.getPlants().add(new Plant(u5, "Mexican Sage", "Salvia Leucantha","only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+
         userService.save(u5);
 
         if (false)

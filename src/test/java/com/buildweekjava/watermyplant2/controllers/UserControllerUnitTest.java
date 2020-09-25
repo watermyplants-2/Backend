@@ -171,7 +171,7 @@ public class UserControllerUnitTest
         RequestBuilder rb = MockMvcRequestBuilders.get(apiUrl)
                 .accept(MediaType.APPLICATION_JSON);
 
-        // the following actually performs a real controller call
+
         MvcResult r = mockMvc.perform(rb)
                 .andReturn(); // this could throw an exception
         String tr = r.getResponse()

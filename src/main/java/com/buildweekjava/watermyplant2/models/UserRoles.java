@@ -5,16 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * The entity allowing interaction with the userroles table.
- * The join table between users and roles.
- * <p>
- * Table enforces a unique constraint of the combination of userid and roleid.
- * These two together form the primary key.
- * <p>
- * When you have a compound primary key, you must implement Serializable for Hibernate
- * When you implement Serializable you must implement equals and hash code
- */
 @Entity
 @Table(name = "userroles")
 @IdClass(UserRolesId.class)
@@ -23,6 +13,7 @@ public class UserRoles
         implements Serializable
 {
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "userid")
     @JsonIgnoreProperties(value = "roles", allowSetters = true)
