@@ -8,10 +8,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler;
 
-/**
- * Once the client has gained authorization, users need to gain authentication. This class is response for handling that.
- * It also configures which roles have access to which endpoints. So controls the users' access!
- */
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig
@@ -26,12 +23,7 @@ public class ResourceServerConfig
                 .stateless(false);
     }
 
-    /**
-     * This method configures which roles can access which endpoints
-     *
-     * @param http Our HttpSecurity object that is maintains by Spring
-     * @throws Exception in case the configurations fails
-     */
+
     @Override
     public void configure(HttpSecurity http)
             throws

@@ -10,26 +10,17 @@ import org.springframework.web.context.request.WebRequest;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Class to override the error details provided by Spring Boot. We want to use our own format.
- */
+
 @Component
 public class CustomErrorDetails
         extends DefaultErrorAttributes
 {
-    /**
-     * Connects this class with the Helper Functions
-     */
+
     @Autowired
     private HelperFunctions helperFunctions;
 
-    /**
-     * Custom method to override the error details provided by Spring Boot. We want to use our own format.
-     *
-     * @param webRequest        The information related to the request that was made and the exceptions that occurred.
-     * @param includeStackTrace Should we include the Stack Trace in our output. This field is not used in our implementation.
-     * @return a Map of String, Object with our information to report in place of the standard Spring Boot information.
-     */
+//    custome method to override error details from springboot
+
     @Override
     public Map<String, Object> getErrorAttributes(
             WebRequest webRequest,

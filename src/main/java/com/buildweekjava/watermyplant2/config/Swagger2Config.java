@@ -21,11 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Import(BeanValidatorPluginsConfiguration.class)
 public class Swagger2Config
 {
-    /**
-     * Configures what to document using Swagger
-     *
-     * @return A Docket which is the primary interface for Swagger configuration
-     */
+
     @Bean
     public Docket api()
     {
@@ -38,11 +34,7 @@ public class Swagger2Config
                 .apiInfo(apiEndPointsInfo());
     }
 
-    /**
-     * Configures some information related to the Application for Swagger
-     *
-     * @return ApiInfo a Swagger object containing identification information for this application
-     */
+
     private ApiInfo apiEndPointsInfo()
     {
         return new ApiInfoBuilder().title("Water My Plants")

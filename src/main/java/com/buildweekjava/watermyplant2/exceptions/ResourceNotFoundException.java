@@ -1,8 +1,6 @@
 package com.buildweekjava.watermyplant2.exceptions;
 
-/**
- * A custom exception to be used when a resource is not but is suppose to be
- */
+// error when a resource is not found when its supposed to be
 public class ResourceNotFoundException
         extends RuntimeException
 {
