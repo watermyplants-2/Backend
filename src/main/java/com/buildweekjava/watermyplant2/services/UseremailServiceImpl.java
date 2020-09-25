@@ -11,23 +11,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Implements the UseremailService Interface
- */
 @Transactional
 @Service(value = "useremailService")
 public class UseremailServiceImpl
         implements com.buildweekjava.watermyplant2.services.UseremailService
 {
-    /**
-     * Connects this service to the Useremail model
-     */
+
     @Autowired
     private UseremailRepository useremailrepos;
 
-    /**
-     * Connects this servive to the User Service
-     */
+
     @Autowired
     private com.buildweekjava.watermyplant2.services.UserService userService;
 
@@ -38,10 +31,7 @@ public class UseremailServiceImpl
     public List<Useremail> findAll()
     {
         List<Useremail> list = new ArrayList<>();
-        /*
-         * findAll returns an iterator set.
-         * iterate over the iterator set and add each element to an array list.
-         */
+
         useremailrepos.findAll()
                 .iterator()
                 .forEachRemaining(list::add);
@@ -119,8 +109,7 @@ public class UseremailServiceImpl
             return useremailrepos.save(newUserEmail);
         } else
         {
-            // note we should never get to this line but is needed for the compiler
-            // to recognize that this exception can be thrown
+
             throw new ResourceNotFoundException("This user is not authorized to make change");
         }
     }

@@ -12,29 +12,19 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Implements the RoleService Interface
- */
+
 @Transactional
 @Service(value = "roleService")
 public class RoleServiceImpl
         implements RoleService
 {
-    /**
-     * Connects this service to the Role Model
-     */
+
     @Autowired
     RoleRepository rolerepos;
 
-    /**
-     * Connect this service to the User Model
-     */
     @Autowired
     UserRepository userrepos;
 
-    /**
-     * Connects this service to the auditing service in order to get current user name
-     */
     @Autowired
     private UserAuditing userAuditing;
 
