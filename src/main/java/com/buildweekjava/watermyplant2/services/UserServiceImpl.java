@@ -1,10 +1,7 @@
 package com.buildweekjava.watermyplant2.services;
 
 import com.buildweekjava.watermyplant2.exceptions.ResourceNotFoundException;
-import com.buildweekjava.watermyplant2.models.Role;
-import com.buildweekjava.watermyplant2.models.User;
-import com.buildweekjava.watermyplant2.models.UserRoles;
-import com.buildweekjava.watermyplant2.models.Useremail;
+import com.buildweekjava.watermyplant2.models.*;
 import com.buildweekjava.watermyplant2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -120,6 +117,17 @@ public class UserServiceImpl
             newUser.getUseremails()
                 .add(new Useremail(newUser,
                     ue.getUseremail()));
+        }
+
+        newUser.getPlants()
+                .clear();
+        for (Plant pl : user.getPlants())
+        {
+            newUser.getPlants()
+                    .add(new Plant(newUser,
+                            pl.getNickname(),
+                            pl.getSpecies(),
+                            pl.getH2oFrequency()));
         }
 
         return userrepos.save(newUser);

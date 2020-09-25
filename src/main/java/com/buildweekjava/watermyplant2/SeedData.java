@@ -1,6 +1,7 @@
 package com.buildweekjava.watermyplant2;
 
 import com.buildweekjava.watermyplant2.models.*;
+import com.buildweekjava.watermyplant2.services.PlantService;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
@@ -25,6 +26,9 @@ public class SeedData
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    PlantService plantService;
 
 
     @Transactional
@@ -59,12 +63,10 @@ public class SeedData
                 .add(new Useremail(u1,
                                    "admin@mymail.local"));
 
-//
-        userService.save(u1);
         u1.getPlants().add(new Plant(u1, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u1.getPlants().add(new Plant(u1, "Mexican Sage", "Salvia Leucantha","Water Mexican sage only during periods of drought, when more than two weeks have passed without significant rainfall" ));
-
+        userService.save(u1);
         // data, user
         User u2 = new User("cinnamon",
                            "1234567",
@@ -82,12 +84,12 @@ public class SeedData
         u2.getUseremails()
                 .add(new Useremail(u2,
                                    "bunny@email.local"));
-        userService.save(u2);
+
         u2.getPlants().add(new Plant(u2, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u2.getPlants().add(new Plant(u2, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
                 "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
-
+        userService.save(u2);
 
         // user
         User u3 = new User("barnbarn",
@@ -98,23 +100,23 @@ public class SeedData
         u3.getUseremails()
                 .add(new Useremail(u3,
                                    "barnbarn@email.local"));
-        userService.save(u3);
+
         u3.getPlants().add(new Plant(u3, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u3.getPlants().add(new Plant(u3, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
                 "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
-
+        userService.save(u3);
 
         User u4 = new User("puttat",
                            "password",
                            "puttat@school.lambda");
         u4.getRoles()
                 .add(new UserRoles(u4, r2));
-        userService.save(u4);
         u4.getPlants().add(new Plant(u4, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u4.getPlants().add(new Plant(u4, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
                 "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
+        userService.save(u4);
 
 
         User u5 = new User("misskitty",
@@ -122,12 +124,12 @@ public class SeedData
                            "misskitty@school.lambda");
         u5.getRoles()
                 .add(new UserRoles(u5, r2));
-        userService.save(u5);
+
         u5.getPlants().add(new Plant(u5, "Forget Me Not", "Myosotis Sylvatica",
                 "4 Times a Week in Summer, and Once a week the rest of the year" ));
         u5.getPlants().add(new Plant(u5, "Mexican Sage", "Salvia Leucantha","Water Mexican sage " +
                 "only during periods of drought, when more than two weeks have passed without significant rainfall" ));
-
+        userService.save(u5);
 
         if (false)
         {

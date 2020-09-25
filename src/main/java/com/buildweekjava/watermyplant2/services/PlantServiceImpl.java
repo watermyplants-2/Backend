@@ -35,12 +35,12 @@ public class PlantServiceImpl implements PlantService {
         if (plant.getSpecies() != null) {
             currentPlant.setSpecies(plant.getSpecies());
         }
-//        if (plant.getNickname() != null) {
-//            currentPlant.setNickname(plant.getNickname());
-//        }
-//        if (plant.getH2oFrequency() != null) {
-//            currentPlant.setH2oFrequency(plant.getH2oFrequency());
-//        }
+        if (plant.getNickname() != null) {
+            currentPlant.setNickname(plant.getNickname());
+        }
+        if (plant.getH2oFrequency() != null) {
+            currentPlant.setH2oFrequency(plant.getH2oFrequency());
+        }
 
         return plantRepository.save(currentPlant);
     }
@@ -51,6 +51,8 @@ public class PlantServiceImpl implements PlantService {
         Plant addPlant = new Plant();
 
         addPlant.setNickname(plant.getNickname());
+        addPlant.setH2oFrequency(plant.getH2oFrequency());
+        addPlant.setSpecies(plant.getSpecies());
         addPlant.setUser(userService.findUserById(userid));
         return plantRepository.save(addPlant);
     }

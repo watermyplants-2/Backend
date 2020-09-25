@@ -12,15 +12,17 @@ public class Plant{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long plantid;
 
-    @ManyToOne
-    @JoinColumn(name = "userid", nullable = false)
-    @JsonIgnoreProperties(value = "roles", allowSetters = true)
-
-    private User user;
-
     private String nickname;
     private String species;
     private String h2oFrequency;
+
+    @ManyToOne
+    @JoinColumn(name = "userid", nullable = false)
+    @JsonIgnoreProperties(value = "users", allowSetters = true)
+
+    private User user;
+
+
 
     public Plant() {
     }
